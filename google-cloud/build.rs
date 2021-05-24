@@ -1,6 +1,10 @@
 use std::fs;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
+    if std::env::var("DOCS_RS").is_ok() {
+        return Ok(());
+    }
+
     let protos = [
         (["protos/google/pubsub/v1/pubsub.proto"], "src/pubsub/api"),
         (
