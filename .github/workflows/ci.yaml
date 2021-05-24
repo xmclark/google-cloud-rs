@@ -9,6 +9,7 @@ on:
 jobs:
   build_and_test:
     name: Build and test
+    environment: integration-tests
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
